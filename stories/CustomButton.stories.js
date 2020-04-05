@@ -13,15 +13,24 @@ export const MyHeader = () => <Header />;
 
 export const PageWithCustomButtons = () => <div>
     <Header
+    text="Loves"
     fontSize={15}
     color="#ABC"
     onMouseOver={LoveOver}
     fontWeight="normal"/>
     <Header
-    fontSize={25}
+    text="Likes"
+    fontSize={17}
     color="#DDA"
     onMouseOver={LikeOver}
     fontWeight="bold"/>
+    <Header
+    text="Pride"
+    fontSize={23}
+    color="#ADC"
+    onMouseOver={ProudOver}
+    fontWeight="bolder"/>
+
     <CustomButton 
     color="#999"
     text="Cancel"
@@ -43,6 +52,10 @@ function LoveOver() {
 
 function LikeOver() {
     alert("I like you!");
+}
+
+function ProudOver() {
+    alert("I'm proud of you!")
 }
 
 function CancelClick() {
