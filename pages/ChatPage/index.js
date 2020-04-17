@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './chatpage.css';
 import Chat from '../../comps/Chat';
 import CustomButton from '../../comps/CustomButton';
 import Header from '../../comps/Header';
 import Input from '../../comps/Input';
+import {TiContacts} from 'react-icons/ti';
+import {AiFillSmile} from 'react-icons/ai';
+import {FaFacebookMessenger} from 'react-icons/fa';
 
 /*
 var welcome= "welcome to my App!"
@@ -25,7 +28,13 @@ const [color, setColor] = useState("#DAB");
 const [text, setText] = useState("Click me to see your favorite color!");
 //const [state, function] = useState("default value");
 
-return <div>
+useEffect(()=> {
+    setTimeout(()=>{
+    document.querySelector("#chatpage").style.left = 0;
+}, 50)
+}, []);
+
+return <div id="chatpage">
     <div id="welcome">
         <Header fontSize={32} text={welcome} />
     </div>
@@ -39,6 +48,9 @@ return <div>
         <Chat img={"https://www.sensov.com/wp-content/uploads/2018/11/bot.jpg"}name={"Chat Bot"} backgroundColor={"#FAB"} msg={resp}/>
     </div>
     <div id="controls">
+    <TiContacts color="#D02" />
+    <AiFillSmile color="#C90" />
+    <FaFacebookMessenger color="#CE8" />
         <Input onClick={(val)=>{
             setMsg(val);
             var new_resp = CheckResponse(val);
